@@ -18,6 +18,12 @@ mongoose.connect(
     })
     .catch((err) => {
         console.error(err.message);
-    });
+    }
+);
 
-    app.use("/api/auth", authRoutes);
+app.use("/api/auth", authRoutes);
+
+app.listen(process.env.PORT, () => {
+    console.log(`Server started on ${process.env.PORT}`)
+});
+
